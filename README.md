@@ -144,6 +144,7 @@ source with a `TODO(Christian)` comment.
 
 | Where | What's needed |
 | ----- | ------------- |
+| **Everywhere** | **Name mismatch:** the logo reads `DOMINION HOLDING LLC` (singular), the site text and your incorporation documents read `Atlas Dominion Holdings LLC` (plural). One of them is wrong. The site currently follows the legal documents. Worth settling before print. |
 | `contact.html` | A business email on the atlas-dominion.com domain, a phone number, and a city/state if you want one shown. Your personal Gmail is **not** published anywhere on the site. |
 | `about.html` | Your actual bio — years in payments/advisory, prior roles, notable work, any licences or certifications. The current text describes the firm's approach and says nothing about your background. A headshot (~800×1000) in `assets/img/` would sit well beside it. |
 | `business-capital.html` | Real funder criteria if you want concrete minimums shown ("6+ months in business, $15k+/mo deposits"). I wrote around this with general language rather than inventing thresholds. |
@@ -157,36 +158,36 @@ or specific pricing. Fabricating any of those on a financial-services site is a
 real liability, not a copy problem. Send me the genuine versions and I will add
 them.
 
-### The logo is a placeholder I designed
+## Logo assets
 
-There was no Atlas Dominion logo anywhere — not in the repo, your Downloads,
-Documents, OneDrive, or Google Drive — so I drew one rather than ship a
-wordmark-only header.
+All derived from the supplied lockup. The source is a white-background raster;
+the white has been knocked out to alpha, which is safe here because every
+placement sits on a near-white ground (`--paper` / `--bone`).
 
-It is a truncated pyramid that reads as both an **A** and a plinth (Atlas,
-bearing weight): navy structure, gold crossbar, geometric enough to survive
-16px. It lives in two places:
+| File | Size | Used for |
+| ---- | ---- | -------- |
+| `assets/img/logo-mark.png` | 134×114 | Header. Rendered at 38px tall, so 3× for retina |
+| `assets/img/logo-full.png` | 737×600 | Full lockup — decks, email signatures, off-site |
+| `assets/img/favicon-32.png` | 32×32 | Browser tab |
+| `assets/img/apple-touch-icon.png` | 180×180 | iOS home screen |
+| `assets/img/icon-512.png` | 512×512 | Spare, for a PWA manifest if ever needed |
+| `assets/img/og-image.png` | 1200×630 | Social share card |
 
-| File | Used for |
-| ---- | -------- |
-| `assets/img/logo.svg` | Standalone asset — decks, email signatures, anywhere off-site |
-| `favicon.svg` | Browser tab. Navy tile so it holds against any tab background |
+The three square tiles put the mark on a **bone** field rather than transparent
+or navy, because the mark's "A" is navy and would disappear against a dark tab
+or dark home screen.
 
-In the pages the mark is **inline SVG**, not an `<img>`, so it inherits
-`currentColor` — the same markup renders navy in the header and bone in the
-footer with no second file.
+**The footer stays type-only, deliberately.** The footer is navy and the "A" is
+navy; a raster logo cannot recolour itself the way the old inline SVG could. If
+you want the mark down there, send a reversed (light) version of the logo and
+it drops straight in.
 
-**To swap in the real logo:** replace the two SVG files, then update the inline
-`<svg class="wordmark__mark">` in the nine HTML files (grep for
-`wordmark__mark`). If yours is a PNG, put it in `assets/img/` and swap the
-inline `<svg>` for `<img class="wordmark__mark" src="assets/img/logo.png" alt="">`
-— but then the footer needs a light variant, since a PNG cannot recolour itself.
+### Regenerating
 
-### Still missing
-
-- **`apple-touch-icon.png`** (180×180) and **`og-image.png`** (1200×630). The
-  `og:` meta tags are in place and just need the image added. SVG favicons work
-  everywhere modern; iOS home-screen bookmarks still want the PNG.
+`logo-mark.png` is a raster. If you get a **vector** original (`.svg`, `.ai`,
+`.eps`), that is strictly better — swap `assets/img/logo-mark.png` for
+`logo-mark.svg`, update the `src` and drop the `width`/`height` attributes in
+the nine HTML files (grep `wordmark__mark`).
 
 ---
 

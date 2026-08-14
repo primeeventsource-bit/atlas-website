@@ -257,10 +257,10 @@ a:hover { text-decoration-color: var(--gold); }
     color: var(--navy);
 }
 
-/* The mark inherits `color`, so the same markup works on paper and on navy. */
+/* Height-constrained, width auto — the mark is not square (376×320). */
 .wordmark__mark {
-    width: 34px;
-    height: 34px;
+    height: 38px;
+    width: auto;
     flex: none;
 }
 
@@ -668,9 +668,8 @@ legend {
 
 .footer__grid ul { list-style: none; margin: 0; padding: 0; display: grid; gap: .7rem; }
 
-.footer .wordmark { color: var(--bone); }
+/* The footer is navy and the mark's "A" is navy, so the footer stays type-only. */
 .footer .wordmark__name { color: var(--bone); }
-.footer .wordmark__mark { width: 30px; height: 30px; }
 
 .footer__blurb {
     margin-top: 1.25rem;
