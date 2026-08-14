@@ -1,0 +1,68 @@
+# Netlify configuration — atlas-dominion.com
+#
+# The site is hand-written static HTML with no build step, so there is no
+# build command: Netlify publishes the repository root as-is. 404.html is
+# picked up automatically.
+
+[build]
+  publish = "."
+
+# ---------------------------------------------------------------------------
+# Caching
+#
+# Asset filenames are NOT content-hashed (there is no bundler), so aggressive
+# immutable caching would strand visitors on an old stylesheet after an edit.
+# These values are deliberately short; Netlify also serves ETags, so unchanged
+# files still come back 304.
+# ---------------------------------------------------------------------------
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "geolocation=(), microphone=(), camera=(), payment=(), interest-cohort=()"
+
+[[headers]]
+  for = "/*.html"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+[[headers]]
+  for = "/"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+[[headers]]
+  for = "/assets/css/*"
+  [headers.values]
+    Cache-Control = "public, max-age=3600"
+
+[[headers]]
+  for = "/assets/js/*"
+  [headers.values]
+    Cache-Control = "public, max-age=3600"
+
+[[headers]]
+  for = "/assets/img/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"
+
+# ---------------------------------------------------------------------------
+# Content Security Policy — NOT enabled yet, on purpose.
+#
+# The policy below is believed correct for this site: no inline <script> is
+# used anywhere, so script-src needs no 'unsafe-inline'; style-src does need
+# it because the pages use inline style="" attributes; connect-src must allow
+# the admin origin or the contact form and tracker beacons will fail silently.
+#
+# "Silently" is the problem: a wrong CSP breaks lead capture without any
+# visible error, so this should be switched on only after submitting a real
+# test enquiry with the browser console open. To enable, uncomment the block.
+#
+# [[headers]]
+#   for = "/*"
+#   [headers.values]
+#     Content-Security-Policy = "default-src 'self'; script-src 'self' https://admin.atlas-dominion.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' https://admin.atlas-dominion.com; form-action 'self'; base-uri 'self'; frame-ancestors 'none'"
+# ---------------------------------------------------------------------------

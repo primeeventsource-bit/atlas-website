@@ -193,17 +193,37 @@ the nine HTML files (grep `wordmark__mark`).
 
 ## Deploying
 
-Static hosting, no build. Any of these work:
+Hosted on **Netlify**. `netlify.toml` in the repo root carries the whole
+configuration — publish directory, cache headers and security headers — so
+connecting the repo needs no settings in the Netlify UI.
 
-**Cloudflare Pages / Netlify** — connect the repo, leave the build command
-empty, set the publish directory to `/`. Both serve `404.html` automatically and
-give you clean URLs (`/services` as well as `/services.html`).
+1. Netlify → **Add new site → Import an existing project** → GitHub →
+   `primeeventsource-bit/atlas-website`.
+2. Leave the build command **empty** and publish directory `/`. Netlify reads
+   `netlify.toml` and will fill these in itself.
+3. Deploy. You get a `*.netlify.app` URL immediately.
+4. **Domain management → Add custom domain →** `atlas-dominion.com`. Netlify
+   then shows the exact apex `A` record and `www` CNAME to create at GoDaddy.
 
-**GitHub Pages** — Settings → Pages → deploy from `main`, root. Note that Pages
-does **not** strip `.html`, so links must keep the extension. They currently do.
+DNS stays at GoDaddy (`ns29/ns30.domaincontrol.com`) — Netlify supports an apex
+`A` record, so no nameserver migration is needed. Use whatever values Netlify
+displays rather than any IP written down here; they change.
 
-Then point `atlas-dominion.com` at the host, and add the `admin` CNAME for the
-backend as described in the backend repo's `docs/DEPLOYMENT.md`.
+The `admin.atlas-dominion.com` A record for the backend is already live and
+must be left alone.
+
+### Caching caveat
+
+Asset filenames are not content-hashed, because there is no bundler. The cache
+headers in `netlify.toml` are deliberately short for that reason — an hour on
+CSS/JS, a week on images. If you ever add a build step with hashed filenames,
+raise them.
+
+### Content Security Policy
+
+`netlify.toml` contains a CSP that is commented out. It is believed correct,
+but a wrong CSP breaks the contact form *silently*, so switch it on only after
+submitting a real test enquiry with the browser console open.
 
 ### Launch checklist
 
