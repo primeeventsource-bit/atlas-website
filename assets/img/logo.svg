@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" width="40" height="40" role="img" aria-label="Atlas Dominion Holdings">
+    <title>Atlas Dominion Holdings</title>
+    <!--
+      A truncated pyramid: an "A" that also reads as a plinth — Atlas, bearing
+      weight. Navy structure, gold crossbar. Geometric so it survives 16px.
+    -->
+    <path d="M5 34 L15.5 7 H24.5 L35 34" fill="none" stroke="#0c1a3a" stroke-width="3" stroke-linejoin="miter"/>
+    <path d="M11.5 24.5 H28.5" stroke="#c9a24a" stroke-width="3"/>
+</svg>

@@ -250,8 +250,23 @@ a:hover { text-decoration-color: var(--gold); }
 
 .wordmark {
     display: flex;
-    flex-direction: column;
+    align-items: center;
+    gap: .7rem;
     text-decoration: none;
+    line-height: 1;
+    color: var(--navy);
+}
+
+/* The mark inherits `color`, so the same markup works on paper and on navy. */
+.wordmark__mark {
+    width: 34px;
+    height: 34px;
+    flex: none;
+}
+
+.wordmark__text {
+    display: flex;
+    flex-direction: column;
     line-height: 1;
 }
 
@@ -429,34 +444,19 @@ a:hover { text-decoration-color: var(--gold); }
     list-style: none;
     margin: 0;
     padding: 0;
-    counter-reset: step;
     display: grid;
     gap: 0;
 }
 
+/* Sequence is carried by the hairline rules and reading order, not by numbers. */
 .steps li {
-    counter-increment: step;
-    display: grid;
-    grid-template-columns: 4.5rem 1fr;
-    gap: clamp(1rem, 3vw, 2.5rem);
     padding-block: clamp(1.75rem, 3vw, 2.5rem);
     border-top: 1px solid var(--line);
-    align-items: start;
 }
 
 .steps li:last-child { border-bottom: 1px solid var(--line); }
 
-.steps li::before {
-    content: "0" counter(step);
-    font-family: var(--mono);
-    font-size: .75rem;
-    letter-spacing: .1em;
-    color: var(--gold-deep);
-    padding-top: .45rem;
-}
-
 .section--navy .steps li { border-color: rgba(246, 241, 231, .14); }
-.section--navy .steps li::before { color: var(--gold); }
 
 .steps h3 { margin-bottom: .6rem; }
 .steps p { color: var(--muted); font-size: .9375rem; }
@@ -668,7 +668,9 @@ legend {
 
 .footer__grid ul { list-style: none; margin: 0; padding: 0; display: grid; gap: .7rem; }
 
+.footer .wordmark { color: var(--bone); }
 .footer .wordmark__name { color: var(--bone); }
+.footer .wordmark__mark { width: 30px; height: 30px; }
 
 .footer__blurb {
     margin-top: 1.25rem;
@@ -748,8 +750,6 @@ legend {
     .nav__toggle { display: inline-flex; }
     .masthead__inner { position: relative; }
 
-    .steps li { grid-template-columns: 1fr; gap: .5rem; }
-    .steps li::before { padding-top: 0; }
 }
 
 @media (prefers-reduced-motion: reduce) {

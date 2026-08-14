@@ -157,14 +157,36 @@ or specific pricing. Fabricating any of those on a financial-services site is a
 real liability, not a copy problem. Send me the genuine versions and I will add
 them.
 
-### Also missing
+### The logo is a placeholder I designed
 
-- **Favicon and social share image.** Drop `favicon.ico`, `apple-touch-icon.png`,
-  and an `og-image.png` (1200×630) in the root, then add the `<link rel="icon">`
-  and `<meta property="og:image">` tags. The `og:` tags are otherwise in place.
-- **A logo mark.** The wordmark is currently set in Cormorant Garamond, which
-  looks intentional and holds up fine — but if you have a mark, it belongs in
-  `.wordmark`.
+There was no Atlas Dominion logo anywhere — not in the repo, your Downloads,
+Documents, OneDrive, or Google Drive — so I drew one rather than ship a
+wordmark-only header.
+
+It is a truncated pyramid that reads as both an **A** and a plinth (Atlas,
+bearing weight): navy structure, gold crossbar, geometric enough to survive
+16px. It lives in two places:
+
+| File | Used for |
+| ---- | -------- |
+| `assets/img/logo.svg` | Standalone asset — decks, email signatures, anywhere off-site |
+| `favicon.svg` | Browser tab. Navy tile so it holds against any tab background |
+
+In the pages the mark is **inline SVG**, not an `<img>`, so it inherits
+`currentColor` — the same markup renders navy in the header and bone in the
+footer with no second file.
+
+**To swap in the real logo:** replace the two SVG files, then update the inline
+`<svg class="wordmark__mark">` in the nine HTML files (grep for
+`wordmark__mark`). If yours is a PNG, put it in `assets/img/` and swap the
+inline `<svg>` for `<img class="wordmark__mark" src="assets/img/logo.png" alt="">`
+— but then the footer needs a light variant, since a PNG cannot recolour itself.
+
+### Still missing
+
+- **`apple-touch-icon.png`** (180×180) and **`og-image.png`** (1200×630). The
+  `og:` meta tags are in place and just need the image added. SVG favicons work
+  everywhere modern; iOS home-screen bookmarks still want the PNG.
 
 ---
 

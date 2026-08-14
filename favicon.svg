@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" width="40" height="40" role="img" aria-label="Atlas Dominion Holdings">
+    <title>Atlas Dominion Holdings</title>
+    <!-- Solid navy tile so the mark holds up against any browser-tab background. -->
+    <rect width="40" height="40" rx="7" fill="#0c1a3a"/>
+    <path d="M7.5 31.5 L16 10 H24 L32.5 31.5" fill="none" stroke="#f6f1e7" stroke-width="3" stroke-linejoin="miter"/>
+    <path d="M13 24 H27" stroke="#c9a24a" stroke-width="3"/>
+</svg>
