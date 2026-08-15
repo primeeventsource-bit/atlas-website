@@ -64,6 +64,9 @@
                 <a class="btn btn--gold" href="contact.html?intent=statement-audit" data-atlas-cta="ms-hero">
                     Get a free statement review
                 </a>
+                <a class="btn btn--ghost" href="#apply" data-atlas-cta="ms-hero-apply">
+                    Start a pre-application
+                </a>
             </div>
             <div class="hero__figure">
                 <svg viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
@@ -207,7 +210,394 @@
         </div>
     </section>
 
-    <section class="section cta">
+    <!-- ------------------------------------------- how processing works -->
+    <section class="section">
+        <div class="shell split">
+            <div class="split__aside">
+                <p class="eyebrow">The mechanics</p>
+                <h2>Where the money actually goes</h2>
+                <p style="margin-top:1.5rem">
+                    Almost nobody selling you processing explains this, because the confusion is
+                    what the margin hides behind.
+                </p>
+            </div>
+
+            <div>
+                <p>
+                    When a customer taps a card, the money passes through four parties before it
+                    reaches you: the card network, the bank that issued the customer's card, the
+                    processor, and whoever sold you the account. Each takes a cut, and only one of
+                    those cuts is negotiable.
+                </p>
+
+                <ol class="steps" style="margin-top:2rem">
+                    <li>
+                        <div>
+                            <h3>Interchange</h3>
+                            <p>
+                                Paid to the bank that issued your customer's card, and set by Visa
+                                and Mastercard in published rate tables. Every provider pays exactly
+                                the same interchange. Nobody can discount it — and anybody implying
+                                they can is telling you something else.
+                            </p>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <h3>Assessments and network fees</h3>
+                            <p>
+                                Paid to Visa, Mastercard, Discover and Amex themselves. Small,
+                                fixed, and also identical for everyone.
+                            </p>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <h3>Processor markup</h3>
+                            <p>
+                                What your provider adds on top. <strong>This is the only part
+                                anyone can actually compete on</strong> — and on most statements it
+                                is deliberately blended into the first two so you cannot see it.
+                            </p>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <h3>Everything else</h3>
+                            <p>
+                                Monthly minimums, statement fees, PCI fees, PCI non-compliance
+                                penalties, batch fees, gateway fees, terminal leases. Individually
+                                small, collectively often larger than the markup.
+                            </p>
+                        </div>
+                    </li>
+                </ol>
+            </div>
+        </div>
+    </section>
+
+    <!-- ------------------------------------------------- pricing models -->
+    <section class="section section--bone">
+        <div class="shell">
+            <p class="eyebrow">Three ways it gets priced</p>
+            <h2>The structure matters more than the rate</h2>
+
+            <div class="grid grid--3" style="margin-top:3rem">
+
+                <article class="card">
+                    <p class="card__index">Tiered</p>
+                    <h3>Qualified / mid / non-qualified</h3>
+                    <p>
+                        Your provider decides which bucket each transaction lands in, and the
+                        buckets are theirs to define. A rewards card or a keyed-in sale quietly
+                        "downgrades" to the expensive tier.
+                    </p>
+                    <ul class="checks">
+                        <li>Markup is invisible by design</li>
+                        <li>The advertised rate applies to a minority of transactions</li>
+                        <li>Almost always the most expensive in practice</li>
+                    </ul>
+                </article>
+
+                <article class="card">
+                    <p class="card__index">Flat rate</p>
+                    <h3>One percentage for everything</h3>
+                    <p>
+                        Simple and honest about being simple. You overpay on cheap transactions
+                        and underpay on expensive ones, which nets out badly once volume grows
+                        or your average ticket rises.
+                    </p>
+                    <ul class="checks">
+                        <li>Genuinely fine at low volume</li>
+                        <li>Predictable, easy to reconcile</li>
+                        <li>Expensive once you are past roughly five figures a month</li>
+                    </ul>
+                </article>
+
+                <article class="card">
+                    <p class="card__index">Interchange-plus</p>
+                    <h3>Cost, then a stated markup</h3>
+                    <p>
+                        Interchange and assessments passed through at cost, with the provider's
+                        margin shown as a separate line. It is the only structure where you can
+                        still audit your provider a year from now.
+                    </p>
+                    <ul class="checks">
+                        <li>Markup stays visible after you sign</li>
+                        <li>You benefit when interchange drops</li>
+                        <li>What we place merchants on, barring a reason not to</li>
+                    </ul>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ------------------------------------------ approval requirements -->
+    <section class="section">
+        <div class="shell">
+            <p class="eyebrow">Getting approved</p>
+            <h2>What underwriting actually asks for</h2>
+            <p class="lede" style="margin-top:1.25rem;max-width:60ch">
+                A merchant account is a line of credit, not a subscription — the processor is
+                liable if you take money and do not deliver. That is why underwriting exists, and
+                it is why the questions look the way they do.
+            </p>
+
+            <div class="grid grid--2" style="margin-top:3rem">
+
+                <article class="card">
+                    <p class="card__index">Documents</p>
+                    <h3>What you will need to hand over</h3>
+                    <ul class="checks">
+                        <li>Government-issued photo ID for each owner of 25% or more</li>
+                        <li>Business formation documents — Articles of Organization or Incorporation</li>
+                        <li>EIN confirmation letter, or SSN for a sole proprietor</li>
+                        <li>A voided check or bank letter for the deposit account</li>
+                        <li>Three months of business bank statements</li>
+                        <li>Three months of processing statements, if you accept cards today</li>
+                        <li>Business license, where your industry or state requires one</li>
+                    </ul>
+                </article>
+
+                <article class="card">
+                    <p class="card__index">Assessment</p>
+                    <h3>What they are weighing</h3>
+                    <ul class="checks">
+                        <li>Time in business and stability of deposits</li>
+                        <li>Personal credit of the signing owner</li>
+                        <li>Your industry code and its chargeback history</li>
+                        <li>Average and highest ticket against your volume</li>
+                        <li>Card-present versus keyed or online mix</li>
+                        <li>Prior chargeback ratio and any past terminations</li>
+                        <li>Whether delivery is immediate or months out</li>
+                    </ul>
+                </article>
+
+            </div>
+
+            <div class="grid grid--2" style="margin-top:1.5rem">
+
+                <article class="card">
+                    <p class="card__index">Selling online</p>
+                    <h3>Extra requirements for e-commerce</h3>
+                    <p>
+                        Card-not-present accounts get read more carefully, and most declines at
+                        this stage are for missing website basics rather than anything financial.
+                    </p>
+                    <ul class="checks">
+                        <li>Refund, return, and cancellation policy, plainly stated</li>
+                        <li>Terms of service and a privacy policy</li>
+                        <li>Working contact details — not just a form</li>
+                        <li>Valid SSL across the whole site</li>
+                        <li>Prices, currency, and delivery timelines shown before checkout</li>
+                        <li>Descriptor text your customers will recognize on a statement</li>
+                    </ul>
+                </article>
+
+                <article class="card">
+                    <p class="card__index">Straight talk</p>
+                    <h3>What can slow it down or stop it</h3>
+                    <p>
+                        Better to know before you apply than to collect a decline that sits on
+                        your record.
+                    </p>
+                    <ul class="checks">
+                        <li>A prior account closed for cause, or a MATCH-list placement</li>
+                        <li>Highest ticket far above your average, with nothing explaining it</li>
+                        <li>Deposits that do not support the volume claimed</li>
+                        <li>Industries some banks simply will not board</li>
+                        <li>Brand-new business with no processing history — solvable, often with a reserve</li>
+                    </ul>
+                </article>
+
+            </div>
+
+            <div class="callout" style="margin-top:2.5rem">
+                <p>
+                    <strong>Timelines vary and nobody can promise otherwise.</strong> A clean,
+                    low-risk, card-present account with complete paperwork is often approved within
+                    a couple of business days. Higher-risk industries, thin credit, or missing
+                    documents take longer and may come back with conditions such as a rolling
+                    reserve or a volume cap. Approval, pricing, and terms are the processor's
+                    decision, not ours.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- --------------------------------------------- pre-application ---- -->
+    <section class="section section--bone" id="apply">
+        <div class="shell split">
+
+            <div class="split__aside">
+                <p class="eyebrow">Pre-application</p>
+                <h2>Find out where you stand before you apply</h2>
+                <p style="margin-top:1.5rem">
+                    This is not the application. It is the information underwriting would look at
+                    first, so we can tell you which processors fit, what pricing is realistic, and
+                    whether anything in your profile needs handling before you formally apply.
+                </p>
+
+                <div class="callout" style="margin-top:2rem">
+                    <p>
+                        <strong>We deliberately do not ask for sensitive details here.</strong>
+                        No Social Security number, no EIN, no bank account or routing numbers.
+                        Those are collected by the processor on its own secure application once
+                        you decide to go ahead — this website never touches them, and neither does
+                        our database.
+                    </p>
+                </div>
+            </div>
+
+            <div>
+                <form id="merchant-application-form"
+                      class="form"
+                      data-atlas-track="merchant-application"
+                      data-endpoint="https://admin.atlas-dominion.com/api/public/leads"
+                      data-endpoint-local="http://localhost:8000/api/public/leads"
+                      novalidate>
+
+                    <div class="honeypot" aria-hidden="true">
+                        <label for="ma-website">Website</label>
+                        <input type="text" id="ma-website" name="website" tabindex="-1" autocomplete="off">
+                    </div>
+
+                    <div class="field-row">
+                        <div class="field">
+                            <label for="ma-name">Your name <span class="required-mark" aria-hidden="true">*</span></label>
+                            <input type="text" id="ma-name" name="name" maxlength="120" autocomplete="name" required>
+                            <p class="field-error" data-error-for="name"></p>
+                        </div>
+                        <div class="field">
+                            <label for="ma-email">Email <span class="required-mark" aria-hidden="true">*</span></label>
+                            <input type="email" id="ma-email" name="email" maxlength="180" autocomplete="email" required>
+                            <p class="field-error" data-error-for="email"></p>
+                        </div>
+                    </div>
+
+                    <div class="field-row">
+                        <div class="field">
+                            <label for="ma-phone">Phone</label>
+                            <input type="tel" id="ma-phone" name="phone" maxlength="30" autocomplete="tel">
+                            <p class="field-error" data-error-for="phone"></p>
+                        </div>
+                        <div class="field">
+                            <label for="ma-company">Legal business name</label>
+                            <input type="text" id="ma-company" name="company" maxlength="120" autocomplete="organization">
+                            <p class="field-error" data-error-for="company"></p>
+                        </div>
+                    </div>
+
+                    <div class="field-row">
+                        <div class="field">
+                            <label for="ma-dba">DBA / trading name</label>
+                            <input type="text" id="ma-dba" name="dba" maxlength="120">
+                            <p class="field-error" data-error-for="dba"></p>
+                        </div>
+                        <div class="field">
+                            <label for="ma-type">Entity type</label>
+                            <select id="ma-type" name="business_type">
+                                <option value="">Select…</option>
+                                <option value="sole-proprietor">Sole proprietor</option>
+                                <option value="llc">LLC</option>
+                                <option value="corporation">Corporation</option>
+                                <option value="partnership">Partnership</option>
+                                <option value="non-profit">Non-profit</option>
+                            </select>
+                            <p class="field-error" data-error-for="business_type"></p>
+                        </div>
+                    </div>
+
+                    <div class="field-row">
+                        <div class="field">
+                            <label for="ma-industry">Industry / what you sell</label>
+                            <input type="text" id="ma-industry" name="industry" maxlength="80" placeholder="Auto repair">
+                            <p class="field-error" data-error-for="industry"></p>
+                        </div>
+                        <div class="field">
+                            <label for="ma-months">Months in business</label>
+                            <input type="number" id="ma-months" name="months_in_business" min="0" max="1200" inputmode="numeric" placeholder="48">
+                            <p class="field-error" data-error-for="months_in_business"></p>
+                        </div>
+                    </div>
+
+                    <fieldset>
+                        <legend>Volume — estimates are fine</legend>
+
+                        <div class="field-row">
+                            <div class="field">
+                                <label for="ma-volume">Monthly card volume (USD)</label>
+                                <input type="number" id="ma-volume" name="monthly_processing_volume_dollars"
+                                       min="0" step="1000" inputmode="numeric" placeholder="125000">
+                                <p class="field-error" data-error-for="monthly_processing_volume_dollars"></p>
+                            </div>
+                            <div class="field">
+                                <label for="ma-avg">Average ticket (USD)</label>
+                                <input type="number" id="ma-avg" name="average_ticket_dollars"
+                                       min="0" step="1" inputmode="numeric" placeholder="180">
+                                <p class="field-error" data-error-for="average_ticket_dollars"></p>
+                            </div>
+                        </div>
+
+                        <div class="field-row">
+                            <div class="field">
+                                <label for="ma-high">Highest ticket (USD)</label>
+                                <input type="number" id="ma-high" name="high_ticket_dollars"
+                                       min="0" step="1" inputmode="numeric" placeholder="4000">
+                                <p class="field-error" data-error-for="high_ticket_dollars"></p>
+                            </div>
+                            <div class="field">
+                                <label for="ma-cp">Percent taken in person</label>
+                                <input type="number" id="ma-cp" name="card_present_percent"
+                                       min="0" max="100" step="5" inputmode="numeric" placeholder="80">
+                                <p class="hint">0 means entirely online or keyed, 100 means entirely in person.</p>
+                                <p class="field-error" data-error-for="card_present_percent"></p>
+                            </div>
+                        </div>
+                    </fieldset>
+
+                    <div class="field-row">
+                        <div class="field">
+                            <label for="ma-accepts">Accepting cards today?</label>
+                            <select id="ma-accepts" name="accepts_cards_today">
+                                <option value="">Select…</option>
+                                <option value="1">Yes</option>
+                                <option value="0">No — this would be our first account</option>
+                            </select>
+                            <p class="field-error" data-error-for="accepts_cards_today"></p>
+                        </div>
+                        <div class="field">
+                            <label for="ma-processor">Current processor</label>
+                            <input type="text" id="ma-processor" name="current_processor" maxlength="120" placeholder="Square, Stripe, Fiserv…">
+                            <p class="field-error" data-error-for="current_processor"></p>
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <label for="ma-message">Anything underwriting should know?</label>
+                        <textarea id="ma-message" name="message" rows="4" maxlength="5000"
+                                  placeholder="Seasonal swings, a prior decline, a new location opening — anything that would otherwise be a surprise."></textarea>
+                        <p class="field-error" data-error-for="message"></p>
+                    </div>
+
+                    <div>
+                        <button type="submit" class="btn btn--gold" id="ma-submit">Submit pre-application</button>
+                    </div>
+
+                    <p class="form-status" id="ma-status" role="status" aria-live="polite" tabindex="-1"></p>
+
+                    <p class="disclosure">
+                        Submitting this is not an application for credit and does not affect your
+                        credit score. Approval, pricing, and terms are determined by the processor.
+                        See our <a href="privacy.html">privacy notice</a>.
+                    </p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section--navy cta">
         <div class="shell shell--narrow">
             <p class="eyebrow eyebrow--plain" style="justify-content:center">No obligation</p>
             <h2>Send one statement. Get real numbers back.</h2>
@@ -279,6 +669,7 @@
 </footer>
 
 <script src="assets/js/site.js" defer></script>
+<script src="assets/js/merchant-application.js" defer></script>
 <script src="https://admin.atlas-dominion.com/tracker.js" defer></script>
 </body>
 </html>
