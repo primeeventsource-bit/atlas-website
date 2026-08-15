@@ -1,5 +1,5 @@
 /*!
- * Atlas Dominion — shared site behaviour.
+ * Atlas Dominion — shared site behavior.
  * Progressive enhancement only: every page works with this file absent.
  */
 (function () {

@@ -59,7 +59,7 @@
 #
 # "Silently" is the problem: a wrong CSP breaks lead capture without any
 # visible error, so this should be switched on only after submitting a real
-# test enquiry with the browser console open. To enable, uncomment the block.
+# test inquiry with the browser console open. To enable, uncomment the block.
 #
 # [[headers]]
 #   for = "/*"

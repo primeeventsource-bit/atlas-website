@@ -6,7 +6,7 @@ Marketing site for **Atlas Dominion Holdings LLC** — advisory, merchant servic
 Hand-written static HTML and CSS. **No build step, no dependencies, no
 framework.** Edit a file, commit, deploy.
 
-The enquiry form and visitor analytics are served by the backend at
+The inquiry form and visitor analytics are served by the backend at
 `admin.atlas-dominion.com` (repo: `primeeventsource-bit/atlas-dominion-backend`).
 
 ---
@@ -20,7 +20,7 @@ merchant-services.html   ISO / statement audit
 business-capital.html    MCA / working capital
 advisory.html            Strategy, brand, growth
 about.html               The firm
-contact.html             Enquiry form
+contact.html             Inquiry form
 privacy.html             Privacy & cookie notice
 404.html                 Not found
 
@@ -91,7 +91,7 @@ while developing, add `data-atlas-endpoint`:
 - `utm_source` / `utm_medium` / `utm_campaign` / `utm_content` / `utm_term`
 - `source_page` and `referrer`
 - `visitor_cookie` — the `atlas_vid` cookie set by `tracker.js`, which links the
-  enquiry to the visitor's browsing history in the admin
+  inquiry to the visitor's browsing history in the admin
 - `form_elapsed_seconds` and a hidden `website` honeypot — both spam signals
 
 Intake is rate-limited to 6 submissions per minute per IP.
@@ -110,7 +110,7 @@ pre-qualifier fields (monthly volume, months in business, industry):
 | `/contact.html?intent=advisory-growth` | Advisory | No |
 | `/contact.html` | General | No |
 
-An unrecognised intent is recorded as `general` rather than rejected — a
+An unrecognized intent is recorded as `general` rather than rejected — a
 mistyped campaign URL costs a tidy label, never the lead.
 
 UTM tags pass straight through, so
@@ -146,7 +146,7 @@ source with a `TODO(Christian)` comment.
 | ----- | ------------- |
 | **Everywhere** | **Name mismatch:** the logo reads `DOMINION HOLDING LLC` (singular), the site text and your incorporation documents read `Atlas Dominion Holdings LLC` (plural). One of them is wrong. The site currently follows the legal documents. Worth settling before print. |
 | `contact.html` | A business email on the atlas-dominion.com domain, a phone number, and a city/state if you want one shown. Your personal Gmail is **not** published anywhere on the site. |
-| `about.html` | Your actual bio — years in payments/advisory, prior roles, notable work, any licences or certifications. The current text describes the firm's approach and says nothing about your background. A headshot (~800×1000) in `assets/img/` would sit well beside it. |
+| `about.html` | Your actual bio — years in payments/advisory, prior roles, notable work, any licenses or certifications. The current text describes the firm's approach and says nothing about your background. A headshot (~800×1000) in `assets/img/` would sit well beside it. |
 | `business-capital.html` | Real funder criteria if you want concrete minimums shown ("6+ months in business, $15k+/mo deposits"). I wrote around this with general language rather than inventing thresholds. |
 | `advisory.html` | Engagement fee ranges, if you want them published. |
 | `privacy.html` | A dedicated privacy contact address and your registered business address. |
@@ -178,7 +178,7 @@ or navy, because the mark's "A" is navy and would disappear against a dark tab
 or dark home screen.
 
 **The footer stays type-only, deliberately.** The footer is navy and the "A" is
-navy; a raster logo cannot recolour itself the way the old inline SVG could. If
+navy; a raster logo cannot recolor itself the way the old inline SVG could. If
 you want the mark down there, send a reversed (light) version of the logo and
 it drops straight in.
 
@@ -223,7 +223,7 @@ raise them.
 
 `netlify.toml` contains a CSP that is commented out. It is believed correct,
 but a wrong CSP breaks the contact form *silently*, so switch it on only after
-submitting a real test enquiry with the browser console open.
+submitting a real test inquiry with the browser console open.
 
 ### Launch checklist
 
