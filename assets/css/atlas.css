@@ -363,6 +363,53 @@ a:hover { text-decoration-color: var(--gold); }
     color: var(--muted);
 }
 
+/* ---------------------------------------------------------------------------
+ | Hero figure
+ |
+ | A meridian/globe motif echoing the logo mark, filling the dead space to the
+ | right of the hero copy. Positioned against .hero__inner (the 1200px shell)
+ | rather than .hero, so it lines up with the content edge instead of the
+ | viewport edge.
+ |
+ | Copy is capped at 16ch (h1) and 54ch (lede), so at these widths the figure
+ | cannot collide with text. Below 1100px there is no dead space left to fill,
+ | so it is removed from the document rather than merely hidden.
+ --------------------------------------------------------------------------- */
+.hero__figure {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    width: min(30vw, 340px);
+    aspect-ratio: 1;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.hero__figure--lg {
+    width: min(36vw, 430px);
+}
+
+.hero__figure svg {
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+}
+
+/* Keep copy above the artwork in every stacking case. */
+.hero__inner > *:not(.hero__figure) {
+    position: relative;
+    z-index: 1;
+}
+
+@media (max-width: 1100px) {
+    .hero__figure { display: none; }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .hero__figure { transition: opacity .4s var(--ease); }
+}
+
 .hero__meta {
     margin-top: 3.5rem;
     padding-top: 1.75rem;
